@@ -5,7 +5,8 @@
 #include <iostream>
 #include "CommandHandler.h"
 #include "HashUtils.h"
-#define max 3
+#include "files/FileReading.h"
+#define max 4
 using namespace std;
 
 string strings[max];
@@ -51,6 +52,15 @@ void CommandHandler::handleCommand(std::string commandArgs) {
         }
         else if (strings[1] == "md5") {
             cout << "MD5 Hash (" + word + "): " + HashUtils::genMD5Hash(word) + "\n";
+        }
+    } else if (strings[0] == "crack") {
+        string path = strings[2];
+        string hash = strings[3];
+
+        if (strings[1] == "sha256") {
+            FileReading::scanFile("sha256", path, hash);
+        } else if (strings[1] == "md5") {
+            FileReading::scanFile("md5", path, hash);
         }
     }
 }
