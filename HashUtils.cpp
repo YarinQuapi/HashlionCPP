@@ -19,4 +19,3 @@ std::string HashUtils::genMD5Hash(const std::string& str) {
 std::string HashUtils::genSha1Hash(const std::string& str) {
     return sha1(str);
 }
-

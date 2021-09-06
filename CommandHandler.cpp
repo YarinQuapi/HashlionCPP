@@ -2,10 +2,10 @@
 // Created by yarin on 04/09/2021.
 //
 #include <string>
-#include <iostream>
 #include "CommandHandler.h"
-#include "HashUtils.h"
-#include "files/FileReading.h"
+#include "commands/HashCommand.h"
+#include "commands/CrackCommand.h"
+#include "iostream"
 #define max 4
 using namespace std;
 
@@ -43,26 +43,12 @@ void split (string str, char seperator)
 void CommandHandler::handleCommand(std::string commandArgs) {
     split(std::move(commandArgs), ' ');
 
-    if (strings[0] == "hash") {
-        string word = strings[2];
-
-        if (strings[1] == "sha256") {
-            cout << "Sha256 Hash (" + word + "): " + HashUtils::genSha256Hash(word) + "\n";
-        }
-        else if (strings[1] == "md5") {
-            cout << "MD5 Hash (" + word + "): " + HashUtils::genMD5Hash(word) + "\n";
-
-        }
+    if (strings[0] == "help") {
+        cout << " • hash <hashType [sha256,md5,sha1]> <textToHash>\n";
+        cout << " • crack <hashType [sha256,md5,sha1]> <pathToWordFile> <hashToCrack>";
+    } else if (strings[0] == "hash") {
+        HashCommand::onCommand(strings);
     } else if (strings[0] == "crack") {
-        string path = strings[2];
-        string hash = strings[3];
-
-        if (strings[1] == "sha256") {
-            FileReading::scanFile("sha256", path, hash);
-        } else if (strings[1] == "md5") {
-            FileReading::scanFile("md5", path, hash);
-        } else if (strings[1] == "sha1") {
-            FileReading::scanFile("sha1", path, hash);
-        }
+        CrackCommand::onCommand(strings);
     }
 }
