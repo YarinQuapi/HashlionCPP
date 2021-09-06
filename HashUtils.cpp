@@ -6,6 +6,7 @@
 #include "HashUtils.h"
 #include "hashes/sha256.h"
 #include "hashes/md5.h"
+#include "hashes/sha1.h"
 
 std::string HashUtils::genSha256Hash(const std::string& str) {
     return sha256(str);
@@ -13,5 +14,9 @@ std::string HashUtils::genSha256Hash(const std::string& str) {
 
 std::string HashUtils::genMD5Hash(const std::string& str) {
     return md5(str);
+}
+
+std::string HashUtils::genSha1Hash(const std::string& str) {
+    return sha1(str);
 }
 

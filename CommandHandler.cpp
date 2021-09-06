@@ -30,7 +30,7 @@ void split (string str, char seperator)
         if (str[i] == seperator || i == len(str))
         {
             endIndex = i;
-            string subStr = "";
+            string subStr;
             subStr.append(str, startIndex, endIndex - startIndex);
             strings[currIndex] = subStr;
             currIndex += 1;
@@ -41,7 +41,6 @@ void split (string str, char seperator)
 }
 
 void CommandHandler::handleCommand(std::string commandArgs) {
-
     split(std::move(commandArgs), ' ');
 
     if (strings[0] == "hash") {
@@ -52,6 +51,7 @@ void CommandHandler::handleCommand(std::string commandArgs) {
         }
         else if (strings[1] == "md5") {
             cout << "MD5 Hash (" + word + "): " + HashUtils::genMD5Hash(word) + "\n";
+
         }
     } else if (strings[0] == "crack") {
         string path = strings[2];
@@ -61,6 +61,8 @@ void CommandHandler::handleCommand(std::string commandArgs) {
             FileReading::scanFile("sha256", path, hash);
         } else if (strings[1] == "md5") {
             FileReading::scanFile("md5", path, hash);
+        } else if (strings[1] == "sha1") {
+            FileReading::scanFile("sha1", path, hash);
         }
     }
 }

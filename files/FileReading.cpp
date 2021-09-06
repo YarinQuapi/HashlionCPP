@@ -30,5 +30,13 @@ void FileReading::scanFile(const std::string& hashType, const std::string& path,
                 break;
             }
         }
+    } else if (hashType == "sha1") {
+        for (std::string line; getline(input, line);) {
+            if (HashUtils::genSha1Hash(line) == hash) {
+                cout << "Hash cracked! output: " << line << "\n";
+                cout << "Cracking took " << float( clock () - begin_time ) /  CLOCKS_PER_SEC << " seconds\n";
+                break;
+            }
+        }
     }
 }
