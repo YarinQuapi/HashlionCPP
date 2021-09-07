@@ -5,7 +5,7 @@
 #include <iostream>
 #include "HashCommand.h"
 #include "string"
-#include "../HashUtils.h"
+#include "../hashes/HashUtils.h"
 
 using namespace std;
 

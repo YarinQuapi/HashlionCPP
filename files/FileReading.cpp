@@ -4,7 +4,7 @@
 
 #include "FileReading.h"
 #include "fstream"
-#include "../HashUtils.h"
+#include "../hashes/HashUtils.h"
 #include "iostream"
 
 using namespace std;

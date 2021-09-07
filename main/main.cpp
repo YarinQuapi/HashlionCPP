@@ -1,7 +1,7 @@
 #include <windows.h>
 #include <string>
 #include <iostream>
-#include "CommandHandler.h"
+#include "../commands/CommandHandler.h"
 
 #define version "0.1-Experimental"
 

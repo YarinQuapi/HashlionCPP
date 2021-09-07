@@ -3,8 +3,8 @@
 //
 #include <string>
 #include "CommandHandler.h"
-#include "commands/HashCommand.h"
-#include "commands/CrackCommand.h"
+#include "HashCommand.h"
+#include "CrackCommand.h"
 #include "iostream"
 #define max 4
 using namespace std;

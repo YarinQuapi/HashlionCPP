@@ -4,7 +4,7 @@
 
 #ifndef HASHLIONCPP_HASHCOMMAND_H
 #define HASHLIONCPP_HASHCOMMAND_H
-#include "../CommandHandler.h"
+#include "CommandHandler.h"
 #include "string"
 
 

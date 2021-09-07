@@ -4,9 +4,9 @@
 
 #include <string>
 #include "HashUtils.h"
-#include "hashes/sha2.h"
-#include "hashes/md5.h"
-#include "hashes/sha1.h"
+#include "sha2.h"
+#include "md5.h"
+#include "sha1.h"
 
 std::string HashUtils::genSha256Hash(const std::string& str) {
     return sha256(str);
