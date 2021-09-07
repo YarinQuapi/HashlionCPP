@@ -31,7 +31,3 @@ std::string HashUtils::genSha224(const std::string &str) {
 std::string HashUtils::genSha384(const std::string &str) {
     return sha384(str);
 }
-
-std::string HashUtils::genSha2(const std::string &) {
-    return sha2;
-}
