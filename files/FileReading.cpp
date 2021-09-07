@@ -46,5 +46,35 @@ void FileReading::scanFile(const std::string& hashType, const std::string& path,
                 break;
             }
         }
+    } else if (hashType == "sha224") {
+        for (std::string line; getline(input, line);) {
+            counter++;
+
+            if (HashUtils::genSha224(line) == hash) {
+                cout << "Hash cracked! output: " << line << "\n";
+                cout << "Cracking took " << float( clock () - begin_time ) /  CLOCKS_PER_SEC << " seconds and " << counter << " tries!\n";
+                break;
+            }
+        }
+    } else if (hashType == "sha384") {
+        for (std::string line; getline(input, line);) {
+            counter++;
+
+            if (HashUtils::genSha384(line) == hash) {
+                cout << "Hash cracked! output: " << line << "\n";
+                cout << "Cracking took " << float( clock () - begin_time ) /  CLOCKS_PER_SEC << " seconds and " << counter << " tries!\n";
+                break;
+            }
+        }
+    } else if (hashType == "sha512") {
+        for (std::string line; getline(input, line);) {
+            counter++;
+
+            if (HashUtils::genSha512(line) == hash) {
+                cout << "Hash cracked! output: " << line << "\n";
+                cout << "Cracking took " << float( clock () - begin_time ) /  CLOCKS_PER_SEC << " seconds and " << counter << " tries!\n";
+                break;
+            }
+        }
     }
 }

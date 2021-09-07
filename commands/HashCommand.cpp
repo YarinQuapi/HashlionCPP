@@ -19,5 +19,11 @@ void HashCommand::onCommand(std::string strings[4]) {
         cout << "MD5 Hash (" + word + "): " + HashUtils::genMD5Hash(word) + "\n";
     } else if (strings[1] == "sha1") {
         cout << "Sha1 Hash (" + word + "): " + HashUtils::genSha1Hash(word) + "\n";
+    } else if (strings[1] == "sha384") {
+        cout << "Sha384 Hash (" + word + "): " + HashUtils::genSha384(word) + "\n";
+    } else if (strings[1] == "sha224") {
+        cout << "Sha224 Hash (" + word + "): " + HashUtils::genSha224(word) + "\n";
+    } else if (strings[1] == "sha512") {
+        cout << "Sha512 Hash (" + word + "): " + HashUtils::genSha512(word) + "\n";
     }
 }

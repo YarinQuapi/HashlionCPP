@@ -4,7 +4,7 @@
 
 #include <string>
 #include "HashUtils.h"
-#include "hashes/sha256.h"
+#include "hashes/sha2.h"
 #include "hashes/md5.h"
 #include "hashes/sha1.h"
 
@@ -18,4 +18,20 @@ std::string HashUtils::genMD5Hash(const std::string& str) {
 
 std::string HashUtils::genSha1Hash(const std::string& str) {
     return sha1(str);
+}
+
+std::string HashUtils::genSha512(const std::string &str) {
+    return sha512(str);
+}
+
+std::string HashUtils::genSha224(const std::string &str) {
+    return sha224(str);
+}
+
+std::string HashUtils::genSha384(const std::string &str) {
+    return sha384(str);
+}
+
+std::string HashUtils::genSha2(const std::string &) {
+    return sha2;
 }

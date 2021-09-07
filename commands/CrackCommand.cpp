@@ -19,5 +19,11 @@ void CrackCommand::onCommand(std::string *strings) {
         FileReading::scanFile("md5", path, hash);
     } else if (strings[1] == "sha1") {
         FileReading::scanFile("sha1", path, hash);
+    } else if (strings[1] == "sha224") {
+        FileReading::scanFile("sha224", path, hash);
+    } else if (strings[1] == "sha384") {
+        FileReading::scanFile("sha384", path, hash);
+    } else if (strings[1] == "sha512") {
+        FileReading::scanFile("sha512", path, hash);
     }
 }

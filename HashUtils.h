@@ -7,6 +7,9 @@
 
 class HashUtils {
 public:
+    static std::string genSha512(const std::string&);
+    static std::string genSha224(const std::string&);
+    static std::string genSha384(const std::string&);
     static std::string genSha256Hash(const std::string&);
     static std::string genMD5Hash(const std::string&);
     static std::string genSha1Hash(const std::string&);
