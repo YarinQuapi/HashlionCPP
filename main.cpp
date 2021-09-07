@@ -8,18 +8,17 @@
 using namespace std;
 
 typedef std::string str;
-
 bool running = true;
 
 int main() {
+    str title = "HashLion C++ " version;
+    SetConsoleTitle(title.c_str());
+
     cout << "Welcome to Hashlion C++ edition"
          << "\nThis version is still highly experimental and might have bugs\n"
-            "Use 'help' for more info.";
+            "Use 'help' for more info.\n";
 
     while (running) {
-        str title = "HashLion C++ " version;
-        SetConsoleTitle(title.c_str());
-
         cout << "\n$ ";
 
         string cmd;
