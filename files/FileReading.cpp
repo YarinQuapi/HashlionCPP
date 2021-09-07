@@ -14,27 +14,35 @@ void FileReading::scanFile(const std::string& hashType, const std::string& path,
 
     const clock_t begin_time = clock();
 
+    int counter = 0;
+
     if (hashType == "sha256") {
         for (std::string line; getline(input, line);) {
+            counter++;
+
             if (HashUtils::genSha256Hash(line) == hash) {
                 cout << "Hash cracked! output: " << line << "\n";
-                cout << "Cracking took " << float( clock () - begin_time ) /  CLOCKS_PER_SEC << " seconds\n";
+                cout << "Cracking took " << float( clock () - begin_time ) /  CLOCKS_PER_SEC << " seconds and " << counter << " tries!\n";
                 break;
             }
         }
     } else if (hashType == "md5") {
         for (std::string line; getline(input, line);) {
+            counter++;
+
             if (HashUtils::genMD5Hash(line) == hash) {
                 cout << "Hash cracked! output: " << line << "\n";
-                cout << "Cracking took " << float( clock () - begin_time ) /  CLOCKS_PER_SEC << " seconds\n";
+                cout << "Cracking took " << float( clock () - begin_time ) /  CLOCKS_PER_SEC << " seconds and " << counter << " tries!\n";
                 break;
             }
         }
     } else if (hashType == "sha1") {
         for (std::string line; getline(input, line);) {
+            counter++;
+
             if (HashUtils::genSha1Hash(line) == hash) {
                 cout << "Hash cracked! output: " << line << "\n";
-                cout << "Cracking took " << float( clock () - begin_time ) /  CLOCKS_PER_SEC << " seconds\n";
+                cout << "Cracking took " << float( clock () - begin_time ) /  CLOCKS_PER_SEC << " seconds and " << counter << " tries!\n";
                 break;
             }
         }
