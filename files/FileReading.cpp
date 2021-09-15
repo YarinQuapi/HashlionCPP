@@ -17,15 +17,21 @@ void FileReading::scanFile(const std::string& hashType, const std::string& path,
     int counter = 0;
 
     if (hashType == "sha256") {
-        for (std::string line; getline(input, line);) {
+        string line;
+
+        while (getline(input, line)) {
             counter++;
 
             if (HashUtils::genSha256Hash(line) == hash) {
                 cout << "Hash cracked! output: " << line << "\n";
                 cout << "Cracking took " << float( clock () - begin_time ) /  CLOCKS_PER_SEC << " seconds and " << counter << " tries!\n";
-                break;
+                return;
             }
         }
+
+        cout << "Couldn't crack hash after " << counter << " tries.";
+
+
     } else if (hashType == "md5") {
         for (std::string line; getline(input, line);) {
             counter++;

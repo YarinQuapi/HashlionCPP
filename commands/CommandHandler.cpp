@@ -44,8 +44,8 @@ void CommandHandler::handleCommand(std::string commandArgs) {
     split(std::move(commandArgs), ' ');
 
     if (strings[0] == "help") {
-        cout << " • hash <hashType [sha256,md5,sha1]> <textToHash>\n";
-        cout << " • crack <hashType [sha256,md5,sha1]> <pathToWordFile> <hashToCrack>";
+        cout << " • hash <hashType [sha224,sha256,sha384,sha512,md5,sha1]> <textToHash>\n";
+        cout << " • crack <hashType [sha224,sha256,sha384,sha512,md5,sha1]> <pathToWordFile> <hashToCrack>\n";
     } else if (strings[0] == "hash") {
         HashCommand::onCommand(strings);
     } else if (strings[0] == "crack") {

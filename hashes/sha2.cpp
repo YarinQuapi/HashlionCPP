@@ -3,7 +3,6 @@
 //
 
 #include "sha2.h"
-
 #include <cstring>
 
 const unsigned int SHA256::sha256_k[64] = //UL = uint32
